@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestNGSuite" parallel="tests">
+    <listeners>
+        <listener class-name="utilities.ExtentReportManager"/>
+    </listeners>
+
+    <test name="Test on Chrome">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="testCases.TC_1_LoginTest"/>
+            <class name="testCases.TC_2_OrgSelectTest"/>
+
+        </classes>
+
+        <groups>
+            <run>
+                <include name="Sanity" />
+                <include name="Regression" />
+            </run>
+        </groups>
+    </test>
+
+</suite>
